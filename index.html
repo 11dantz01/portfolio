@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login JS</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: #3617a5;
+      }
+      form {
+        width: 400px;
+        padding: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #191919;
+        text-align: center;
+        border-radius: 24px;
+      }
+
+      h3 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 14px 10px;
+        width: 200px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+      }
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border-color: #2ecc71;
+      }
+      input[type="submit"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #2ecc71;
+        padding: 14px 10px;
+        width: 200px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      input[type="submit"]:houver {
+        background: #2ecc71;
+      }
+      input[type="reset"] {
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 14px 10px;
+        width: 200px;
+        outline: none;
+        color: white;
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+      }
+      input[type="reset"]:houver {
+        background: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h3>Login</h3>
+      <input type="text" placeholder="Usuario" id="Usuario" />
+      <input type="password" placeholder="Senha" id="senha" />
+      <input type="reset" onclick="limpar()" />
+      <input type="submit" onclick="logar(); return false" />
+    </form>
+
+    <script>
+      function logar() {
+        var Usuario = document.getElementById("Usuario").value;
+        var senha = document.getElementById("senha").value;
+
+        if (Usuario == "admin" && senha == "admin") {
+          alert("Sucesso");
+          location.href = "home.html";
+        } else {
+          alert("Usuario ou senha incorretos");
+        }
+      }
+    </script>
+  </body>
+</html>
